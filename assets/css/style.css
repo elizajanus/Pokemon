@@ -1,0 +1,31 @@
+
+.character {
+    height: 120px;
+    width: 150px;
+    margin: 10px;
+    border: solid 2px black;
+    float: left;
+};
+
+#pikapic {
+    position: fixed;
+    float: center;
+    margin: 5px;
+    clear: both;
+};
+#bulbapic {
+    position: fixed;
+    float: center;
+    margin: 5px;
+    clear: both;
+};
+#charpic {
+    float: center;
+    margin: 5px;
+    clear: both;
+};
+#koffpic {
+    float: center;
+    margin: 5px;
+    clear: both;
+};
