@@ -50,7 +50,7 @@ var Koffing = {
       $("#characterbank").on('click', ".character", function() {
           console.log("empty")
           $target = $(this.target);
-          $(this).addClass('.selected');
+          $(this).addClass('selected');
           console.log("selected class added");
           $('.selected').appendTo("#yourcharacter");
           console.log("appended to your character");
@@ -60,7 +60,7 @@ var Koffing = {
           $(".enemy").appendTo("#enemies");
           console.log("appended to enemies");
       })
-  } else {
+  } else if ($('#yourcharacter').is(':!empty')) {
       console.log("not empty");
       $("#enemies").on('click', ".enemy", function() {
       $defensetarget = $(this.target)
