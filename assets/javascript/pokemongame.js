@@ -44,14 +44,45 @@ var Koffing = {
      attackvalue: 25
  };
 
-$(".character").on('click', function() {
-    $target = $(this.target);
-    $(this).addClass('selected');
-    $(this).appendTo("#yourcharacter");
-    $nottarget = $(".character:not(.selected)");
-    $nottarget.addClass('enemy');
-    $(".enemy").appendTo("#enemies");
-});
+/*if ($('#yourcharacter').is(':empty')) {
+  console.log("empty");*/
+  if ($('#yourcharacter').is(':empty')) {
+      $("#characterbank").on('click', ".character", function() {
+          console.log("empty")
+          $target = $(this.target);
+          $(this).addClass('.selected');
+          console.log("selected class added");
+          $('.selected').appendTo("#yourcharacter");
+          console.log("appended to your character");
+          $nottarget = $(".character:not(.selected)");
+          $nottarget.addClass('enemy');
+          console.log("enemy class added");
+          $(".enemy").appendTo("#enemies");
+          console.log("appended to enemies");
+      })
+  } else {
+      console.log("not empty");
+      $("#enemies").on('click', ".enemy", function() {
+      $defensetarget = $(this.target)
+      $defensetarget.addClass('defense');
+      console.log("defense class added");
+      $defensetarget.appendTo("#defender");
+      console.log("appended to defender");
+    })
+  };
+
+/*});
+} else {*/
+  /*console.log("not empty");
+$(".enemy").on('click', function() {
+    $defensetarget = $(this.target)
+    $(this).addClass('defense');
+    console.log("defense class added");
+    $(this).appendTo("#defender");
+    console.log("appended to defender");*/
+
+
+
 
 
 
