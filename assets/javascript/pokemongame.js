@@ -24,10 +24,6 @@ Restart button reloads the page or resets values (duh)
  */
 $(document).ready(function () {
 
-    
- var hpvalue;
- var attackvalue;
-
 var Pikachu = {
     hpvalue: 120,
     attackvalue: 8
@@ -48,13 +44,13 @@ var Koffing = {
      attackvalue: 25
  };
 
-$(".character").on('click', function(event) {
-    $target = $(event.target);
-        $target.addClass('selected');
-            $(".selected").appendTo("#yourcharacter");
-            $nottarget = $(".character:not(.selected)");
-                $nottarget.addClass('enemy');
-                    $(".enemy").appendTo("#enemies");
+$(".character").on('click', function() {
+    $target = $(this.target);
+    $(this).addClass('selected');
+    $(this).appendTo("#yourcharacter");
+    $nottarget = $(".character:not(.selected)");
+    $nottarget.addClass('enemy');
+    $(".enemy").appendTo("#enemies");
 });
 
 

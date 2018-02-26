@@ -1,3 +1,7 @@
+body {
+    background: url("../images/pokemonbackground.jpg");
+    background-size: cover;
+}
 
 .character {
     height: 120px;
@@ -5,27 +9,27 @@
     margin: 10px;
     border: solid 2px black;
     float: left;
-};
+}
 
 #pikapic {
-    position: fixed;
+    position: relative;
     float: center;
     margin: 5px;
     clear: both;
-};
+}
 #bulbapic {
-    position: fixed;
+    position: relative;
     float: center;
     margin: 5px;
     clear: both;
-};
+}
 #charpic {
-    float: center;
+    float: relative;
     margin: 5px;
     clear: both;
-};
+}
 #koffpic {
-    float: center;
+    float: relative;
     margin: 5px;
     clear: both;
-};
+}
