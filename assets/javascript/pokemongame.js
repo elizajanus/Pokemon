@@ -23,29 +23,30 @@ ADDITION to attack power
 Restart button reloads the page or resets values (duh)
  */
 $(document).ready(function () {
-
 var Pikachu = {
     hpvalue: 120,
     attackvalue: 8
  };
+ /*I can't get these dang object values to display in the html even when I use $("#pikahp").text(Pikachu.hpvalue)*/
+console.log(Pikachu.hpvalue);
 
 var Bulbasaur = {
     hpvalue: 100,
     attackvalue: 5
  };
+console.log(Bulbasaur.hpvalue);
 
 var Charmander = {
      hpvalue: 150,
      attackvalue: 20
  };
-
+console.log (Charmander.hpvalue);
 var Koffing = {
      hpvalue: 180,
      attackvalue: 25
  };
-
-/*if ($('#yourcharacter').is(':empty')) {
-  console.log("empty");*/
+console.log(Koffing.hpvalue);
+/*puts characters in correct divs*/
   if ($('#yourcharacter').is(':empty')) {
       $("#characterbank").on('click', ".character", function() {
           console.log("empty")
@@ -59,28 +60,31 @@ var Koffing = {
           console.log("enemy class added");
           $(".enemy").appendTo("#enemies");
           console.log("appended to enemies");
-      })
-  } else if ($('#yourcharacter').is(':!empty')) {
+      });
+  } if ($('#defender').is(':empty')) {
       console.log("not empty");
       $("#enemies").on('click', ".enemy", function() {
       $defensetarget = $(this.target)
       $defensetarget.addClass('defense');
       console.log("defense class added");
-      $defensetarget.appendTo("#defender");
+      $(this).appendTo("#defender");
       console.log("appended to defender");
-    })
+    });
   };
-
-/*});
-} else {*/
-  /*console.log("not empty");
-$(".enemy").on('click', function() {
-    $defensetarget = $(this.target)
-    $(this).addClass('defense');
-    console.log("defense class added");
-    $(this).appendTo("#defender");
-    console.log("appended to defender");*/
-
+/*if Pikachu is my character and Bulbasaur is defender, etc for 24 possible situations IF THIS ONE WOULD JUST WORK DAMMIT*/
+if ($("#pikachu").hasClass('selected') || $("#bulbasaur").hasClass('defense')) { 
+$("#attack").on('click', function () {
+      console.log("you clicked the attack button");
+        Bulbasaur.hpvalue -= Pikachu.attackvalue;
+        Bulbasaur.attackvalue -= Pikachu.hpvalue;
+        Pikachu.attackvalue += 8;
+        console.log(Pikachu.hpvalue);
+  });
+} else {
+    $("#attack").on('click', function () {
+        console.log("I went to the else statement and you clicked the attack button");
+    });
+};
 
 
 

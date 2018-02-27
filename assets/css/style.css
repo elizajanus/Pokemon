@@ -10,6 +10,7 @@ body {
     margin: 10px;
     border: solid 2px black;
     float: left;
+    background-color: white;
 }
 
 #pikapic {
@@ -33,4 +34,8 @@ body {
     float: relative;
     margin: 5px;
     clear: both;
+}
+#attack {
+    position: relative;
+    left: 25px;
 }
